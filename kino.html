@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="kino.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div id="navbar">
+   
+    <a class="active" href="javascript:void(0)" href="index.html"> 
+    <img class="image" src="logo1.png" width=70px height=18% > </a>
+	
+     <a href="javascript:void(0)"> Registration</a>
+   <div class="dropdown">
+        <button class="dropbtn"> Ideas
+		  <i class="fa fa-caret-down"> </i>
+		</button>
+		<div class="dropdown-content">
+		    <a href="gotvene.html"> Готварство </a>
+			<a href="2"> Музика </a>
+			<a href="2"> Кино </a>
+			<a href="2"> Развлечения </a>
+		</div>	
+	</div>
+</div> 
+
+<div id="Films" class="tabcontent">
+  <h1>Films</h1>
+  <p>London is the capital city of England.</p>
+	  <div class="tab">
+	  <button class="tablinks" onclick="City(event, 'Филми2019')" id="defaultOpen">Филми 2019</button>
+	  <button class="tablinks" onclick="City(event, 'Филми2018')">Филми 2018</button>
+	  <button class="tablinks" onclick="City(event, 'Филми2017')">Филми 2017</button>
+	</div>
+
+	<div id="Филми2019" class="content">
+	  <h3>Филми 2019</h3>
+	  <p>London is the capital city of England.</p>
+	</div>
+
+	<div id="Филми2018" class="content">
+	  <h3>Филми 2018</h3>
+	  <p>Paris is the capital of France.</p> 
+	</div>
+
+	<div id="Филми2017" class="content">
+	  <h3>Филми 2017</h3>
+	  <p>Tokyo is the capital of Japan.</p>
+	</div>
+
+</div>
+
+<div id="Series" class="tabcontent">
+  <h1>Series</h1>
+  <p>Paris is the capital of France.</p>
+	<div class="tabb">
+	  <button class="tabblinks" onclick="City1(event, '2019')" id="defaultOpen">2019</button>
+	  <button class="tabblinks" onclick="City1(event, '2018')">2018</button>
+	  <button class="tabblinks" onclick="City1(event, '2017')">2017</button>
+	</div>
+
+	<div id="2019" class="content1">
+	  <h3>2019</h3>
+	  <p>London is the capital city of England.</p>
+	</div>
+
+	<div id="2018" class="content1">
+	  <h3>2018</h3>
+	  <p>Paris is the capital of France.</p> 
+	</div>
+
+	<div id="2017" class="content1">
+	  <h3>2017</h3>
+	  <p>Tokyo is the capital of Japan.</p>
+	</div>
+  
+</div>
+
+<button class="tablink" onclick="openCity('Films', this, '#ccffeb')" id="defaultOpen">Films</button>
+<button class="tablink" onclick="openCity('Series', this, '#ccffeb')">Series</button>
+
+<script>
+function openCity(cityName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(cityName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+<script>
+function City(evt, cityName) {
+  var i, content, tablinks;
+  content = document.getElementsByClassName("content");
+  for (i = 0; i < content.length; i++) {
+    content[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+<script>
+function City1(evt, cityName) {
+  var i, content1, tabblinks;
+  content1 = document.getElementsByClassName("content1");
+  for (i = 0; i < content1.length; i++) {
+    content1[i].style.display = "none";
+  }
+  tabblinks = document.getElementsByClassName("tabblinks");
+  for (i = 0; i < tabblinks.length; i++) {
+    tabblinks[i].className = tabblinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+   
