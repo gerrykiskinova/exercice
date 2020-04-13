@@ -1,0 +1,150 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="calendar.css">
+<meta charset="UTF-8">
+</head>
+<body>
+
+<div id="navbar"> 
+   
+    <a class="active" href="index2.html"> 
+    <img class="image" src="logo1.png" width=70px height=18% > </a>
+	
+     <a href="javascript:void(0)"> Регистравия</a>
+   <div class="dropdown">
+        <button class="dropbtn"> Идеи
+		  <i class="fa fa-caret-down"> </i>
+		</button>
+		<div class="dropdown-content">
+		    <a href="gotvene.html"> Готварство </a>
+			<a href="music.html"> Музика </a>
+			<a href="kino.html"> Кино </a>
+		</div>	
+	</div>
+	
+</div> 
+<title>Календар</title>
+<h5>&#128525;Как се чувствате днес?&#128512;</h5>
+
+<label class="container">0%
+  <input type="radio" checked="checked" name="radio" id="one" onclick="color()">
+  <span class="checkmark"></span>
+</label>
+<label class="container">25%
+  <input type="radio" name="radio" id="two" onclick="color()">
+  <span class="checkmark"></span>
+</label>
+<label class="container">50%
+  <input type="radio" name="radio" id="three" onclick="color()">
+  <span class="checkmark"></span>
+</label>
+<label class="container">75%
+  <input type="radio" name="radio" id="four" onclick="color()">
+  <span class="checkmark"></span>
+</label>
+<label class="container">100%
+  <input type="radio" name="radio" id="five" onclick="color()">
+  <span class="checkmark"></span>
+</label>
+  
+  <div class="month">      
+  <ul>
+    <li class="prev">&#10094;</li>
+    <li class="next">&#10095;</li>
+    <li>
+      April<br>
+      <span style="font-size:18px">2020</span>
+    </li>
+  </ul>
+</div>
+
+<ul class="weekdays">
+  <li>Mo</li>
+  <li>Tu</li>
+  <li>We</li>
+  <li>Th</li>
+  <li>Fr</li>
+  <li>Sa</li>
+  <li>Su</li>
+</ul>
+
+
+<ul class="days">  
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+  <li>6</li>
+  <li>7</li>
+  <li>8</li>
+  <li>9</li>
+  <li>10</li>
+  <li>11</li>
+  <li>12</li>
+  <li><span class="active" id="activee">13</span></li>
+  <li>14</li>
+  <li>15</li>
+  <li>16</li>
+  <li>17</li>
+  <li>18</li>
+  <li>19</li>
+  <li>20</li>
+  <li>21</li>
+  <li>22</li>
+  <li>23</li>
+  <li>24</li>
+  <li>25</li>
+  <li>26</li>
+  <li>27</li>
+  <li>28</li>
+  <li>29</li>
+  <li>30</li>
+  <li>31</li>
+</ul>
+
+  
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+
+<script>
+	function color()
+	{
+		if(document.getElementById("one").checked)
+		{
+			document.getElementById("activee").className = "color";
+		}
+		else if(document.getElementById("two").checked)
+		{
+			document.getElementById("activee").className = "color1";
+		}
+		else if(document.getElementById("three").checked)
+		{
+			document.getElementById("activee").className = "color2";
+		}
+		else if(document.getElementById("four").checked)
+		{
+			document.getElementById("activee").className = "color3";
+		}
+		else if(document.getElementById("five").checked)
+		{
+			document.getElementById("activee").className = "color4";
+		}
+	}
+</script>
+
+</body>
+</html> 
