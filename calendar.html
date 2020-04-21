@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="calendar.style.css">
+    <meta charset="UTF-8">
+</head>
+<body>
+
+    <div id="navbar">
+
+        <a class="active" href="Index_.html">
+            <img class="image" src="logo1.png" width=70px height=18%>
+        </a>
+
+        <a href="registration.html"> Регистравия</a>
+        <div class="dropdown">
+            <button class="dropbtn">
+                Идеи
+                <i class="fa fa-caret-down"> </i>
+            </button>
+            <div class="dropdown-content">
+                <a href="cooking.html"> Готварство </a>
+                <a href="music.html"> Музика </a>
+                <a href="kino.html"> Кино </a>
+            </div>
+        </div>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
+    </div>
+    <title>Календар</title>
+    <h5>&#128525;Как се чувствате днес?&#128512;</h5>
+
+    <label class="container">
+        0%
+        <input type="radio" checked="checked" name="radio" id="one" onclick="color()">
+        <span class="checkmark"></span>
+    </label>
+    <label class="container">
+        25%
+        <input type="radio" name="radio" id="two" onclick="color()">
+        <span class="checkmark"></span>
+    </label>
+    <label class="container">
+        50%
+        <input type="radio" name="radio" id="three" onclick="color()">
+        <span class="checkmark"></span>
+    </label>
+    <label class="container">
+        75%
+        <input type="radio" name="radio" id="four" onclick="color()">
+        <span class="checkmark"></span>
+    </label>
+    <label class="container">
+        100%
+        <input type="radio" name="radio" id="five" onclick="color()">
+        <span class="checkmark"></span>
+    </label>
+
+    <div class="month">
+        <ul>
+            <li class="prev">&#10094;</li>
+            <li class="next">&#10095;</li>
+            <li>
+                2020<br>
+                <span style="font-size:18px"></span>
+            </li>
+        </ul>
+    </div>
+
+    <ul class="months">
+        <button class="tablinks" onclick="openYear(event, 'January')">Ян.</button>
+        <button class="tablinks" onclick="openYear(event, 'February')">Фев.</button>
+        <button class="tablinks" onclick="openYear(event, 'March')">Март</button>
+        <button class="tablinks" onclick="openYear(event, 'April')" id="defaultOpen">Април</button>
+        <button>Май</button>
+        <button>Юни</button>
+        <button>Юли</button>
+        <button>Авг.</button>
+        <button>Септ.</button>
+        <button>Окт.</button>
+        <button>Ное.</button>
+        <button>Дек.</button>
+    </ul>
+
+
+
+    <ul class="weekdays">
+        <li>Пон</li>
+        <li>Вт</li>
+        <li>Ср</li>
+        <li>Чет</li>
+        <li>Петък</li>
+        <li>Съб</li>
+        <li>Нед</li>
+    </ul>
+
+    <!--
+    <ul id="January" class="everymonth">
+      <button class="active1" id="activee1" ></button>
+      <button class="active1" id="activee1" ></button>
+      <button class="active1" id="activee1" onclick="active()">1</button>
+      <button class="active1" id="activee1" onclick="active()">2</button>
+      <button class="active1" id="activee1" onclick="active()">3</button>
+      <button class="active1" id="activee1" onclick="active()">4</button>
+      <button class="active1" id="activee1" onclick="active()">5</button>
+      <button class="active1" id="activee1" onclick="active()">6</button>
+      <button class="active1" id="activee1" onclick="active()">7</button>
+      <button class="active1" id="activee1" onclick="active()">8</button>
+      <button class="active1" id="activee1" onclick="active()">9</button>
+      <button class="active1" id="activee1" onclick="active()">10</button>
+      <button class="active1" id="activee1" onclick="active()">11</button>
+      <button class="active1" id="activee1" onclick="active()">12</button>
+      <button class="active1" id="activee1" onclick="active()">13</button>
+      <button class="active1" id="activee1" onclick="active()">14</button>
+      <button class="active1" id="activee1" onclick="active()">15</button>
+      <button class="active1" id="activee1" onclick="active()">16</button>
+      <button class="active1" id="activee1" onclick="active()">17</button>
+      <button class="active1" id="activee1" onclick="active()">18</button>
+      <button class="active1" id="activee1" onclick="active()">19</button>
+      <button class="active1" id="activee1" onclick="active()">20</button>
+      <button class="active1" id="activee1" onclick="active()">21</button>
+      <button class="active1" id="activee1" onclick="active()">22</button>
+      <button class="active1" id="activee1" onclick="active()">23</button>
+      <button class="active1" id="activee1" onclick="active()">24</button>
+      <button class="active1" id="activee1" onclick="active()">25</button>
+      <button class="active1" id="activee1" onclick="active()">26</button>
+      <button class="active1" id="activee1" onclick="active()">27</button>
+      <button class="active1" id="activee1" onclick="active()">28</button>
+      <button class="active1" id="activee1" onclick="active()">29</button>
+      <button class="active1" id="activee1" onclick="active()">30</button>
+      <button class="active1" id="activee1" onclick="active()">31</button>
+      <button class="active1" id="activee1" onclick="active()"></button>
+      <button class="active1" id="activee1" onclick="active()"></button>
+    </ul>
+
+    <ul id="February" class="everymonth">
+      <button class="active1" id="activee1" onclick="active()"></button>
+      <button class="active1" id="activee1" onclick="active()"></button>
+      <button class="active1" id="activee1" onclick="active()"></button>
+      <button class="active1" id="activee1" onclick="active()"></button>
+      <button class="active1" id="activee1" onclick="active()"></button>
+      <button class="active1" id="activee1" onclick="active()">1</button>
+      <button class="active1" id="activee1" onclick="active()">2</button>
+      <button class="active1" id="activee1" onclick="active()">3</button>
+      <button class="active1" id="activee1" onclick="active()">4</button>
+      <button class="active1" id="activee1" onclick="active()">5</button>
+      <button class="active1" id="activee1" onclick="active()">6</button>
+      <button class="active1" id="activee1" onclick="active()">7</button>
+      <button class="active1" id="activee1" onclick="active()">8</button>
+      <button class="active1" id="activee1" onclick="active()">9</button>
+      <button class="active1" id="activee1" onclick="active()">10</button>
+      <button class="active1" id="activee1" onclick="active()">11</button>
+      <button class="active1" id="activee1" onclick="active()">12</button>
+      <button class="active1" id="activee1" onclick="active()">13</button>
+      <button class="active1" id="activee1" onclick="active()">14</button>
+      <button class="active1" id="activee1" onclick="active()">15</button>
+      <button class="active1" id="activee1" onclick="active()">16</button>
+      <button class="active1" id="activee1" onclick="active()">17</button>
+      <button class="active1" id="activee1" onclick="active()">18</button>
+      <button class="active1" id="activee1" onclick="active()">19</button>
+      <button class="active1" id="activee1" onclick="active()">20</button>
+      <button class="active1" id="activee1" onclick="active()">21</button>
+      <button class="active1" id="activee1" onclick="active()">22</button>
+      <button class="active1" id="activee1" onclick="active()">23</button>
+      <button class="active1" id="activee1" onclick="active()">24</button>
+      <button class="active1" id="activee1" onclick="active()">25</button>
+      <button class="active1" id="activee1" onclick="active()">26</button>
+      <button class="active1" id="activee1" onclick="active()">27</button>
+      <button class="active1" id="activee1" onclick="active()">28</button>
+      <button class="active1" id="activee1" onclick="active()">29</button>
+      <button class="active1" id="activee1" onclick="active()"></button>
+    </ul>
+
+    <ul id="March" class="everymonth">
+      <button class="active1" id="activee1" onclick="active()"></button>
+      <button class="active1" id="activee1" onclick="active()"></button>
+      <button class="active1" id="activee1" onclick="active()"></button>
+      <button class="active1" id="activee1" onclick="active()"></button>
+      <button class="active1" id="activee1" onclick="active()"></button>
+      <button class="active1" id="activee1" onclick="active()"></button>
+      <button class="active1" id="activee1" onclick="active()">1</button>
+      <button class="active1" id="activee1" onclick="active()">2</button>
+      <button class="active1" id="activee1" onclick="active()">3</button>
+      <button class="active1" id="activee1" onclick="active()">4</button>
+      <button class="active1" id="activee1" onclick="active()">5</button>
+      <button class="active1" id="activee1" onclick="active()">6</button>
+      <button class="active1" id="activee1" onclick="active()">7</button>
+      <button class="active1" id="activee1" onclick="active()">8</button>
+      <button class="active1" id="activee1" onclick="active()">9</button>
+      <button class="active1" id="activee1" onclick="active()">10</button>
+      <button class="active1" id="activee1" onclick="active()">11</button>
+      <button class="active1" id="activee1" onclick="active()">12</button>
+      <button class="active1" id="activee1" onclick="active()">13</button>
+      <button class="active1" id="activee1" onclick="active()">14</button>
+      <button class="active1" id="activee1" onclick="active()">15</button>
+      <button class="active1" id="activee1" onclick="active()">16</button>
+      <button class="active1" id="activee1" onclick="active()">17</button>
+      <button class="active1" id="activee1" onclick="active()">18</button>
+      <button class="active1" id="activee1" onclick="active()">19</button>
+      <button class="active1" id="activee1" onclick="active()">20</button>
+      <button class="active1" id="activee1" onclick="active()">21</button>
+      <button class="active1" id="activee1" onclick="active()">22</button>
+      <button class="active1" id="activee1" onclick="active()">23</button>
+      <button class="active1" id="activee1" onclick="active()">24</button>
+      <button class="active1" id="activee1" onclick="active()">25</button>
+      <button class="active1" id="activee1" onclick="active()">26</button>
+      <button class="active1" id="activee1" onclick="active()">27</button>
+      <button class="active1" id="activee1" onclick="active()">28</button>
+      <button class="active1" id="activee1" onclick="active()">29</button>
+      <button class="active1" id="activee1" onclick="active()">30</button>
+      <button class="active1" id="activee1" onclick="active()">31</button>
+      <button class="active1" id="activee1" onclick="active()"></button>
+      <button class="active1" id="activee1" onclick="active()"></button>
+      <button class="active1" id="activee1" onclick="active()"></button>
+      <button class="active1" id="activee1" onclick="active()"></button>
+      <button class="active1" id="activee1" onclick="active()"></button>
+
+    </ul>-->
+
+    <ul id="April" class="everymonth">
+        <button class="active1" id="activee1" onclick="active()"></button>
+        <button class="active1" id="activee1" onclick="active()"></button>
+        <button class="active1" id="activee" onclick="active()">1</button>
+        <button class="active1" id="activee" onclick="active()">2</button>
+        <button class="active1" id="activee" onclick="active()">3</button>
+        <button class="active1" id="activee" onclick="active()">4</button>
+        <button class="active1" id="activee" onclick="active()">5</button>
+        <button class="active1" id="activee" onclick="active()">6</button>
+        <button class="active1" id="activee" onclick="active()">7</button>
+        <button class="active1" id="activee" onclick="active()">8</button>
+        <button class="active1" id="activee" onclick="active()">9</button>
+        <button class="active1" id="activee" onclick="active()">10</button>
+        <button class="active1" id="activee" onclick="active()">11</button>
+        <button class="active1" id="activee" onclick="active()">12</button>
+        <button class="active1" id="activee" onclick="active()">13</button>
+        <button class="active1" id="activee" onclick="active()">14</button>
+        <button class="active1" id="activee" onclick="active()">15</button>
+        <button class="active1" id="activee" onclick="active()">16</button>
+        <button class="active1" id="activee" onclick="active()">17</button>
+        <button class="active1" id="activee" onclick="active()">18</button>
+        <button class="active1" id="activee" onclick="active()">19</button>
+        <button class="active1" id="activee" onclick="active()">20</button>
+        <button class="active1" id="activee" onclick="active()">21</button>
+        <button class="active1" id="activee" onclick="active()">22</button>
+        <button class="active1" id="activee" onclick="active()">23</button>
+        <button class="active1" id="activee" onclick="active()">24</button>
+        <button class="active1" id="activee" onclick="active()">25</button>
+        <button class="active1" id="activee" onclick="active()">26</button>
+        <button class="active1" id="activee" onclick="active()">27</button>
+        <button class="active1" id="activee" onclick="active()">28</button>
+        <button class="active1" id="activee" onclick="active()">29</button>
+        <button class="active1" id="activee1" onclick="active()">30</button>
+        <button class="active1" id="activee1" onclick="active()"></button>
+        <button class="active1" id="activee1" onclick="active()"></button>
+        <button class="active1" id="activee1" onclick="active()"></button>
+    </ul>
+
+    <div class="flip-box">
+        <div class="flip-box-inner">
+            <div class="flip-box-front">
+
+            </div>
+            <div class="flip-box-back">
+                <p>Mnogo losho </p>
+                <p> 50% </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="flip-box1">
+        <div class="flip-box-inner1">
+            <div class="flip-box-front1">
+
+            </div>
+            <div class="flip-box-back1">
+                <p>Mnogo losho </p>
+                <p> 50% </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-box2">
+        <div class="flip-box-inner2">
+            <div class="flip-box-front2">
+
+            </div>
+            <div class="flip-box-back2">
+                <p>Mnogo losho </p>
+                <p> 50% </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-box3">
+        <div class="flip-box-inner3">
+            <div class="flip-box-front3">
+
+            </div>
+            <div class="flip-box-back3">
+                <p>Mnogo losho </p>
+                <p> 50% </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-box4">
+        <div class="flip-box-inner4">
+            <div class="flip-box-front4">
+
+            </div>
+            <div class="flip-box-back4">
+                <p>Mnogo losho </p>
+                <p> 50% </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="calendar_js.js"></script>
+</body>
+</html> 
